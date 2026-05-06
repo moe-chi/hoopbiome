@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HoopBiome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 10px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>HoopBiome</h1>
+<p style="text-align:center;">Understand basketball injuries through biology</p>
+
+<select id="injury">
+  <option value="">Select Injury</option>
+  <option value="ankle">Ankle Sprain</option>
+  <option value="acl">ACL Tear</option>
+  <option value="hamstring">Hamstring Strain</option>
+  <option value="knee_sprain">Knee Sprain</option>
+  <option value="achilles">Achilles</option>
+  <option value="hip_flexor">Hip Flexor</option>
+  <option value="wrist_sprain">Wrist Sprain</option>
+  <option value="calf_strain">Calf Strain</option>
+  <option value="concussion">Concussion</option>
+  <option value="finger_sprain">Finger Sprain</option>
+</select>
+
+<button onclick="analyze()">Analyze</button>
+
+<div class="output" id="output"></div>
+
+<script>
+function analyze() {
+  const injury = document.getElementById("injury").value;
+  let output = "";
+
+  if (injury === "ankle") {
+    output = `🧬 What Happened:
+Ligaments in the ankle are stretched or partially torn, causing inflammation and joint instability.
+
+⏳ Recovery Timeline:
+0–5 days: inflammation + swelling  
+1–3 weeks: tissue repair  
+3–6 weeks: mobility + strength return  
+
+🏀 Performance Impact:
+- Reduced lateral quickness  
+- Decreased explosiveness  
+- Hesitation on cuts  
+
+🔁 Reinjury Risk:
+High if returned before stability is restored
+    `;
+  }
+
+  else if (injury === "acl") {
+    output = `🧬 What Happened:
+ACL (anterior cruciate ligament) rupture leads to major knee instability.
+
+⏳ Recovery Timeline:
+0–2 weeks: inflammation + pre-surgery phase  
+Surgery + 6–9 months rehab  
+9–12+ months full return (varies)
+
+🏀 Performance Impact:
+- Reduced explosiveness  
+- Loss of cutting confidence  
+- Strength asymmetry  
+
+🔁 Reinjury Risk:
+Moderate to high within first year of return
+    `;
+  }
+
+  else if (injury === "hamstring") {
+    output = `🧬 What Happened:
+Muscle fibers in the hamstring are overstretched or torn.
+
+⏳ Recovery Timeline:
+0–3 days: inflammation  
+1–3 weeks: healing  
+3–6 weeks: return to full sprint load  
+
+🏀 Performance Impact:
+- Reduced sprint speed  
+- Limited acceleration  
+- Tightness during cuts  
+
+🔁 Reinjury Risk:
+High if rushed back into sprinting
+    `;
+  }
+
+  else if (injury === "knee_sprain") {
+    output = `🧬 What Happened:
+Ligaments around the knee are overstretched, leading to joint instability and pain during movement.
+
+⏳ Recovery Timeline:
+0–7 days: inflammation + swelling  
+1–3 weeks: mobility restoration  
+3–6 weeks: strength rebuilding  
+
+🏀 Performance Impact:
+- Reduced lateral movement  
+- Hesitation on cuts and pivots  
+- Decreased explosiveness  
+
+🔁 Reinjury Risk:
+Moderate if return to play is rushed
+    `;
+  }
+
+  else if (injury === "achilles") {
+    output = `🧬 What Happened:
+The Achilles tendon is partially or fully torn, disrupting the connection between calf muscles and heel.
+
+⏳ Recovery Timeline:
+0–2 weeks: post-injury/surgery phase  
+2–6 months: gradual loading + rehab  
+6–12+ months: full return (varies widely)  
+
+🏀 Performance Impact:
+- Major loss of explosiveness  
+- Reduced vertical jump  
+- Difficulty with sudden acceleration  
+
+🔁 Reinjury Risk:
+High, especially within first year of return
+    `;
+  }
+
+  else if (injury === "hip_flexor") {
+    output = `🧬 What Happened:
+Strain or inflammation of the hip flexor muscles used for lifting the leg and driving motion.
+
+⏳ Recovery Timeline:
+0–5 days: inflammation  
+1–3 weeks: healing and mobility work  
+3–5 weeks: return to full movement  
+
+🏀 Performance Impact:
+- Reduced first step quickness  
+- Limited explosive drives  
+- Tightness when changing direction  
+
+🔁 Reinjury Risk:
+Moderate if explosiveness is reintroduced too early
+    `;
+  }
+
+  else if (injury === "wrist_sprain") {
+    output = `🧬 What Happened:
+Ligaments in the wrist are stretched or torn, often from falls or contact.
+
+⏳ Recovery Timeline:
+0–3 days: swelling and immobilization  
+1–2 weeks: mobility return  
+2–4 weeks: strength recovery  
+
+🏀 Performance Impact:
+- Reduced shooting control  
+- Difficulty finishing at rim  
+- Weak ball handling under pressure  
+
+🔁 Reinjury Risk:
+Low to moderate depending on severity
+    `;
+  }
+
+  else if (injury === "calf_strain") {
+    output = `🧬 What Happened:
+Small tears in the calf muscle fibers, usually from explosive movements or sudden sprints.
+
+⏳ Recovery Timeline:
+0–3 days: inflammation  
+1–3 weeks: tissue repair  
+3–6 weeks: return to full explosiveness  
+
+🏀 Performance Impact:
+- Reduced acceleration  
+- Lower vertical explosiveness  
+- Tightness during sprinting  
+
+🔁 Reinjury Risk:
+High if not fully healed before return
+    `;
+  }
+
+  else if (injury === "concussion") {
+    output = `🧬 What Happened:
+Brain experiences impact causing temporary disruption in neurological function.
+
+⏳ Recovery Timeline:
+Days to weeks depending on severity and symptoms  
+Must be symptom-free before return-to-play protocol  
+
+🏀 Performance Impact:
+- Slower reaction time  
+- Reduced focus and decision-making  
+- Sensitivity to contact  
+
+🔁 Reinjury Risk:
+Very high if returning before full recovery
+    `;
+  }
+
+  else if (injury === "finger_sprain") {
+    output = `🧬 What Happened:
+Ligaments in the finger joints are overstretched, often from ball contact or jamming.
+
+⏳ Recovery Timeline:
+0–3 days: swelling and pain  
+1–2 weeks: mobility return  
+2–4 weeks: full function  
+
+🏀 Performance Impact:
+- Reduced shooting comfort  
+- Difficulty handling passes  
+- Pain during contact  
+
+🔁 Reinjury Risk:
+Moderate if tape/support is not used during return
+    `;
+  }
+    
+  else {
+    output = "Select an injury to analyze.";
+  }
+
+  document.getElementById("output").innerText = output;
+}
+</script>
+
+</body>
+</html>
